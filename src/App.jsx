@@ -22,7 +22,9 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <div className="hero-avatar">IJ</div>
+        <div className="hero-avatar">
+          <img src="/headshot.jpg" alt="Ishita Juluru" />
+        </div>
         <h1>{info.name}</h1>
         <p className="tagline">{info.tagline}</p>
         <p className="location">📍 {info.location}</p>
