@@ -1,0 +1,196 @@
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d0f;
+  --bg2: #16161a;
+  --bg3: #1e1e24;
+  --border: #2a2a32;
+  --accent: #7c6af7;
+  --accent2: #a89cf8;
+  --text: #e8e8f0;
+  --muted: #8888a0;
+  --highlight: #7c6af720;
+  --radius: 12px;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Nav ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+.nav-name { font-weight: 600; font-size: 0.95rem; color: var(--accent2); }
+.nav ul { display: flex; gap: 1.5rem; list-style: none; }
+.nav a { color: var(--muted); font-size: 0.875rem; transition: color .15s; }
+.nav a:hover { color: var(--text); text-decoration: none; }
+
+/* ── Hero ── */
+.hero {
+  min-height: 92vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, #7c6af718, transparent);
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #fff 40%, var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+}
+.tagline { font-size: 1.15rem; color: var(--muted); margin-bottom: 0.5rem; }
+.location { font-size: 0.9rem; color: var(--muted); margin-bottom: 2rem; }
+.hero-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity .15s, transform .1s;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-outline { border: 1px solid var(--border); color: var(--text); }
+
+/* ── Sections ── */
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* ── About ── */
+.about-grid { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
+.about-text { color: var(--muted); line-height: 1.8; font-size: 0.975rem; }
+.edu-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.edu-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.4rem; }
+.edu-degree { font-weight: 600; font-size: 0.95rem; }
+.edu-gpa { font-size: 0.8rem; color: var(--accent2); font-weight: 600; white-space: nowrap; }
+.edu-school { color: var(--accent2); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.edu-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8rem; color: var(--muted); }
+
+/* ── Experience ── */
+.timeline { display: flex; flex-direction: column; gap: 1.25rem; }
+.exp-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.exp-card.highlight { border-color: var(--accent); background: var(--highlight); }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.exp-title { font-weight: 600; font-size: 1rem; }
+.exp-company { font-size: 0.875rem; color: var(--accent2); margin-top: 0.1rem; }
+.exp-location { color: var(--muted); }
+.exp-dates { font-size: 0.8rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+.exp-bullets { margin: 0.5rem 0 1rem 1.1rem; color: var(--muted); font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.4rem; }
+
+/* ── Projects ── */
+.project-grid { display: grid; gap: 1rem; }
+.project-grid.featured { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-bottom: 1rem; }
+.project-grid.small { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.project-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  transition: border-color .15s;
+}
+.project-card:hover { border-color: var(--accent); }
+.featured-card { border-color: var(--border); }
+.project-name { font-weight: 600; font-size: 0.95rem; }
+.project-desc { font-size: 0.84rem; color: var(--muted); flex: 1; }
+.project-footer { display: flex; flex-direction: column; gap: 0.5rem; margin-top: auto; }
+.gh-link { font-size: 0.75rem; color: var(--accent2); align-self: flex-start; }
+.gh-link:hover { text-decoration: underline; }
+.edu-scholarship { color: var(--accent2); font-weight: 500; }
+
+/* ── Skills ── */
+.skills-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.skill-group h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.6rem; }
+
+/* ── Tags ── */
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ── Awards ── */
+.awards-grid { display: flex; flex-direction: column; gap: 1rem; }
+.award-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.award-top { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+.award-name { font-weight: 600; font-size: 0.95rem; }
+.award-amount { color: var(--accent2); font-weight: 700; font-size: 0.95rem; }
+.award-year { margin-left: auto; font-size: 0.8rem; color: var(--muted); }
+.award-comp { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; }
+.award-desc { font-size: 0.875rem; color: var(--muted); }
+
+/* ── Contact ── */
+.contact-section { text-align: center; border-bottom: none; }
+.contact-sub { color: var(--muted); margin-bottom: 1.5rem; }
+.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ── Mobile nav ── */
+@media (max-width: 640px) {
+  .nav ul { display: none; }
+  .hero h1 { font-size: 2.5rem; }
+}
