@@ -262,22 +262,35 @@ body::after {
 .gh-link:hover { background: #c084fc28; text-decoration: none; }
 
 /* ── Skills ── */
-.skills-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-.skill-group {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.1rem 1.25rem;
-  transition: border-color .2s;
+.skills-list { display: flex; flex-direction: column; }
+.skill-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
 }
-.skill-group:hover { border-color: #3a3a4a; }
-.skill-group h3 {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent2);
-  margin-bottom: 0.8rem;
+.skill-row:last-child { border-bottom: none; }
+.skill-row-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 155px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.skill-icon {
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.skill-cat {
+  font-size: 0.8rem;
   font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 /* ── Tags ── */

@@ -145,19 +145,34 @@ function Projects() {
   );
 }
 
+const SKILL_META = {
+  "Languages":   { icon: "ti-code",   color: "#EAF3DE", iconColor: "#3B6D11" },
+  "AI / ML":     { icon: "ti-brain",  color: "#EEEDFE", iconColor: "#534AB7" },
+  "Full-Stack":  { icon: "ti-stack",  color: "#FAEEDA", iconColor: "#854F0B" },
+  "Tools & Infra": { icon: "ti-server", color: "#FBEAF0", iconColor: "#993556" },
+};
+
 function Skills() {
   return (
     <section id="skills" className="section">
       <h2>Skills</h2>
-      <div className="skills-grid">
-        {Object.entries(skills).map(([cat, list]) => (
-          <div key={cat} className="skill-group">
-            <h3>{cat}</h3>
-            <div className="tag-row">
-              {list.map((s) => <span key={s} className="tag">{s}</span>)}
+      <div className="skills-list">
+        {Object.entries(skills).map(([cat, list]) => {
+          const meta = SKILL_META[cat] || { icon: "ti-circle", color: "#F1EFE8", iconColor: "#5F5E5A" };
+          return (
+            <div key={cat} className="skill-row">
+              <div className="skill-row-head">
+                <div className="skill-icon" style={{ background: meta.color }}>
+                  <i className={`ti ${meta.icon}`} style={{ color: meta.iconColor }} aria-hidden="true" />
+                </div>
+                <span className="skill-cat">{cat}</span>
+              </div>
+              <div className="tag-row">
+                {list.map((s) => <span key={s} className="tag">{s}</span>)}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
