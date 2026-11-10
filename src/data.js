@@ -145,15 +145,14 @@ export const projects = [
     description:
       "Multiplayer Snake game with real gameplay, player-controlled snakes, and power-ups.",
     skills: ["C#"],
-    github: "https://github.com/meishijul/AppointmentScheduler",
   },
 ];
 
 export const skills = {
-  "Languages": ["Python", "Java", "JavaScript", "TypeScript", "C++", "C", "C#", "Dart", "R", "SQL", "Bash"],
-  "AI / ML": ["TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face", "OpenAI API", "Deep Learning", "Neural Networks", "NLP", "Computer Vision", "UNet", "MobileNetV2"],
-  "Full-Stack": ["React.js", "Node.js", "Flutter", "Firebase", "REST APIs", "MySQL", "PostgreSQL"],
-  "Tools & Infra": ["Docker", "Git/GitHub", "Spring Boot", "Apache Kafka", "Jira", "Confluence", "Figma", "Postman"],
+  "Languages": ["Python", "Java", "JavaScript", "TypeScript", "C++", "C", "C#", "Dart", "R", "SQL", "Bash", "YAML"],
+  "AI / ML": ["TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face", "OpenAI API", "LLMs / Prompt Engineering", "Deep Learning", "NLP", "Computer Vision", "UNet", "MobileNetV2"],
+  "Full-Stack": ["React.js", "Node.js", "Flutter", "FastAPI", "Firebase", "DynamoDB", "REST APIs", "MySQL", "PostgreSQL", "Flutter Bloc", "Hive"],
+  "Tools & Infra": ["AWS (Lambda, API Gateway, DynamoDB, Cognito, S3)", "AWS SAM", "Docker", "Git/GitHub", "CI/CD (GitHub Actions)", "Spring Boot", "Apache Kafka", "Jira", "Confluence", "Figma", "Postman", "pytest"],
 };
 
 export const awards = [

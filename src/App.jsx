@@ -22,6 +22,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
+        <div className="hero-avatar">IJ</div>
         <h1>{info.name}</h1>
         <p className="tagline">{info.tagline}</p>
         <p className="location">📍 {info.location}</p>
@@ -167,15 +168,18 @@ function Awards() {
       <div className="awards-grid">
         {awards.map((a) => (
           <div key={a.name} className="award-card">
-            <div className="award-top">
-              <span className="award-name">
-                {a.link ? <a href={a.link} target="_blank" rel="noreferrer">{a.name} ↗</a> : a.name}
-              </span>
-              {a.amount && <span className="award-amount">{a.amount}</span>}
-              <span className="award-year">{a.year}</span>
+            <span className="award-emoji">{a.emoji || "🏆"}</span>
+            <div className="award-body">
+              <div className="award-top">
+                <span className="award-name">
+                  {a.link ? <a href={a.link} target="_blank" rel="noreferrer">{a.name} ↗</a> : a.name}
+                </span>
+                {a.amount && <span className="award-amount">{a.amount}</span>}
+                <span className="award-year">{a.year}</span>
+              </div>
+              {a.competition && <div className="award-comp">{a.competition}</div>}
+              <p className="award-desc">{a.description}</p>
             </div>
-            {a.competition && <div className="award-comp">{a.competition}</div>}
-            <p className="award-desc">{a.description}</p>
           </div>
         ))}
       </div>
