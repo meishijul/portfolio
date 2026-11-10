@@ -144,6 +144,8 @@ a:hover { text-decoration: underline; }
 .gh-link { font-size: 0.75rem; color: var(--accent2); align-self: flex-start; }
 .gh-link:hover { text-decoration: underline; }
 .edu-scholarship { color: var(--accent2); font-weight: 500; }
+.edu-scholarships { margin: 0.3rem 0 0 1rem; display: flex; flex-direction: column; gap: 0.15rem; }
+.edu-scholarships li { font-size: 0.78rem; color: var(--muted); }
 
 /* ── Skills ── */
 .skills-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }

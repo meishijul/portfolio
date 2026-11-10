@@ -19,7 +19,13 @@ export const education = {
   minor: "Mathematics",
   emphasis: "Artificial Intelligence, Information, Visual Computing",
   honors: "Dean's List 2022–2025",
-  scholarships: "Full-ride scholarship — tuition, housing & food covered",
+  scholarships: [
+    "Patwardhan Family Scholarship",
+    "Lowell & Sheila Gill Memorial Endowed Scholarship",
+    "Keaton Walker Scholarship",
+    "Pehrson Family Trust & Scott L. Pehrson Scholarship",
+  ],
+  scholarshipNote: "Full-ride — tuition, housing & food · University of Utah College of Engineering",
 };
 
 export const experience = [

@@ -57,7 +57,10 @@ function About() {
             <span>{education.emphasis}</span>
             <span>Minor: {education.minor}</span>
             <span>{education.honors} · Grad {education.grad}</span>
-            <span className="edu-scholarship">{education.scholarships}</span>
+            <span className="edu-scholarship">{education.scholarshipNote}</span>
+            <ul className="edu-scholarships">
+              {education.scholarships.map((s) => <li key={s}>{s}</li>)}
+            </ul>
           </div>
         </div>
       </div>
