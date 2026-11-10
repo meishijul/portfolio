@@ -166,6 +166,7 @@ export const awards = [
     name: "Best Use of AI/ML for Mars — Crimson Hacks",
     competition: "Redo, Just Build & University of Utah",
     description: "Won for Weather Aware Predictions — MobileNetV2 Mars rover image classifier that generates a 10-day dusty/clear forecast to estimate solar panel charging needs.",
+    link: "https://github.com/meishijul/WeatherAwarePathfinder",
     year: "Oct 2025",
   },
   {
