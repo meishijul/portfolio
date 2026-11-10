@@ -7,7 +7,7 @@ export const info = {
   linkedin: "https://www.linkedin.com/in/ishita-juluru",
   github: "https://github.com/meishijul",
   about:
-    "CS grad from the University of Utah (3.66 GPA, Dean's List 2022–2025) with an emphasis in AI, information, and visual computing. I co-founded Conscious LLC—a sustainability startup that won the $20k Wilkes Center Student Innovation Prize—and have shipped production software at CHG Healthcare and in research labs. I'm passionate about building tools that make a real-world impact.",
+    "First-generation immigrant and Honors CS grad from the University of Utah (3.66 GPA, Dean's List 2022–2025) with an emphasis in AI, information, and visual computing. 1 of 50 students in the College of Engineering to graduate from the Honors College and 1 of 11 to earn the Undergraduate Research Scholar Designation. I co-founded Conscious LLC — a sustainability startup on the App Store and Google Play that won the $20k Wilkes Center Student Innovation Prize — and have shipped production software at CHG Healthcare, in research labs, and now at WebBank.",
 };
 
 export const education = {
@@ -98,10 +98,12 @@ export const projects = [
   {
     name: "Conscious App",
     description:
-      "Mobile app + Chrome extension that empowers eco-conscious purchasing via sustainability metrics and barcode scanning. Won the $20k Wilkes Center Student Innovation Prize.",
+      "Mobile app + Chrome extension that empowers eco-conscious purchasing via barcode scanning and carbon footprint data. Live on the App Store and Google Play. Won the $20k Wilkes Center Student Innovation Prize.",
     skills: ["Flutter", "React.js", "Node.js", "Firebase", "OpenAI", "Python"],
     link: "https://www.consciousapp.org/",
     github: "https://github.com/ConscioussLLC",
+    appStore: "https://apps.apple.com/us/app/consciouss/id6759814422",
+    playStore: "https://play.google.com/store/apps/details?id=com.conscious.app",
     featured: true,
   },
   {
@@ -159,7 +161,7 @@ export const awards = [
     name: "1st Place — AWS AI Hackathon: A Breath of Fresh Air",
     competition: "AWS & One-U Responsible AI Initiative, University of Utah",
     description: "Won first place for BreatheSafeSLC — an AI-powered air quality forecasting app delivering personalized health alerts based on EPA and weather data.",
-    link: "https://www.engineering.utah.edu/news/2025/students-use-ai-to-solve-air-quality-challenges.php",
+    link: "https://rai.utah.edu/students-use-ai-to-solve-air-quality-challenges/",
     year: "Jun 2025",
   },
   {
@@ -172,9 +174,9 @@ export const awards = [
   {
     name: "Wilkes Center Student Innovation Prize — 1st Place",
     amount: "$20,000",
-    competition: "University of Utah Wilkes Center",
+    competition: "University of Utah Wilkes Center for Climate Science & Policy",
     description: "Won for Conscious LLC — a sustainability app empowering eco-conscious purchasing. Listed in top 20 small businesses.",
-    link: "https://wilkes.utah.edu/student-awards/",
+    link: "https://wilkes.utah.edu/conscious-of-the-planet/",
     year: "May 2024",
   },
   {

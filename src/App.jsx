@@ -117,7 +117,11 @@ function Projects() {
             <p className="project-desc">{p.description}</p>
             <div className="project-footer">
               <div className="tag-row">{p.skills.map((s) => <span key={s} className="tag">{s}</span>)}</div>
-              {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="gh-link">GitHub ↗</a>}
+              <div className="project-links">
+                {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="gh-link">GitHub ↗</a>}
+                {p.appStore && <a href={p.appStore} target="_blank" rel="noreferrer" className="gh-link">App Store ↗</a>}
+                {p.playStore && <a href={p.playStore} target="_blank" rel="noreferrer" className="gh-link">Google Play ↗</a>}
+              </div>
             </div>
           </div>
         ))}
