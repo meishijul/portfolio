@@ -164,7 +164,9 @@ function Awards() {
         {awards.map((a) => (
           <div key={a.name} className="award-card">
             <div className="award-top">
-              <span className="award-name">{a.name}</span>
+              <span className="award-name">
+                {a.link ? <a href={a.link} target="_blank" rel="noreferrer">{a.name} ↗</a> : a.name}
+              </span>
               {a.amount && <span className="award-amount">{a.amount}</span>}
               <span className="award-year">{a.year}</span>
             </div>
