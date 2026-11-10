@@ -1,18 +1,14 @@
 import { info, education, experience, projects, skills, awards } from "./data";
 import "./App.css";
 
-const NAV = ["About", "Experience", "Projects", "Skills", "Awards", "Contact"];
-
 function Nav() {
   return (
     <nav className="nav">
       <span className="nav-name">{info.name}</span>
       <ul>
-        {NAV.map((n) => (
-          <li key={n}>
-            <a href={`#${n.toLowerCase()}`}>{n}</a>
-          </li>
-        ))}
+        <li><a href={`mailto:${info.email}`}>Email</a></li>
+        <li><a href={info.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><a href={info.github} target="_blank" rel="noreferrer">GitHub</a></li>
       </ul>
     </nav>
   );
@@ -20,73 +16,141 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <div className="hero-avatar">
-          <img src="/headshot.jpg" alt="Ishita Juluru" />
+    <header className="hero">
+      <div className="hero-left">
+        <div className="hero-photo-wrap">
+          <img src="/headshot.jpg" alt="Ishita Juluru" className="hero-photo" />
         </div>
-        <h1>{info.name}</h1>
-        <p className="tagline">{info.tagline}</p>
-        <p className="location">📍 {info.location}</p>
-        <div className="hero-links">
-          <a href={`mailto:${info.email}`} className="btn btn-primary">
-            Get in Touch
-          </a>
-          <a href={info.linkedin} target="_blank" rel="noreferrer" className="btn btn-outline">
-            LinkedIn
-          </a>
-          <a href={info.github} target="_blank" rel="noreferrer" className="btn btn-outline">
-            GitHub
-          </a>
+        <div className="hero-text">
+          <h1 className="hero-name">Ishita<br /><span>Juluru.</span></h1>
+          <p className="hero-bio">{info.about}</p>
         </div>
+      </div>
+      <div className="hero-pills">
+        <span className="pill pill-green">Software Engineer @ WebBank</span>
+        <span className="pill pill-orange">AI / ML · Full-Stack</span>
+        <span className="pill pill-purple">University of Utah · {education.gpa} GPA</span>
+        <span className="pill pill-muted">📍 {info.location}</span>
+        <div className="hero-cta">
+          <a href={`mailto:${info.email}`} className="btn btn-primary">Get in Touch</a>
+          <a href={info.linkedin} target="_blank" rel="noreferrer" className="btn btn-outline">LinkedIn</a>
+          <a href={info.github} target="_blank" rel="noreferrer" className="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function FeaturedProjects() {
+  const featured = projects.filter((p) => p.featured);
+  return (
+    <section id="projects" className="main-section">
+      <div className="section-label">Featured Work</div>
+      <div className="featured-list">
+        {featured.map((p) => (
+          <div key={p.name} className="feat-card">
+            <div className="feat-card-top">
+              <div className="feat-name">
+                {p.link
+                  ? <a href={p.link} target="_blank" rel="noreferrer">{p.name} ↗</a>
+                  : p.name}
+              </div>
+              <div className="feat-links">
+                {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="feat-link">GitHub ↗</a>}
+                {p.appStore && <a href={p.appStore} target="_blank" rel="noreferrer" className="feat-link">App Store ↗</a>}
+                {p.playStore && <a href={p.playStore} target="_blank" rel="noreferrer" className="feat-link">Play Store ↗</a>}
+              </div>
+            </div>
+            <p className="feat-desc">{p.description}</p>
+            <div className="tag-row">
+              {p.skills.map((s) => <span key={s} className="tag">{s}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="section-label" style={{ marginTop: "2.5rem" }}>More Projects</div>
+      <div className="more-projects">
+        {projects.filter((p) => !p.featured).map((p) => (
+          <div key={p.name} className="more-card">
+            <div className="more-name">{p.name}</div>
+            <div className="more-desc">{p.description}</div>
+            <div className="tag-row" style={{ marginTop: "8px" }}>
+              {p.skills.map((s) => <span key={s} className="tag">{s}</span>)}
+            </div>
+            {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="feat-link" style={{ marginTop: "6px", display: "inline-block" }}>GitHub ↗</a>}
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-function About() {
+function Sidebar() {
+  const topAwards = awards.slice(0, 5);
   return (
-    <section id="about" className="section">
-      <h2>About</h2>
-      <div className="about-grid">
-        <p className="about-text">{info.about}</p>
-        <div className="edu-card">
-          <div className="edu-header">
-            <span className="edu-degree">{education.degree}</span>
-            <span className="edu-gpa">GPA {education.gpa}</span>
-          </div>
-          <div className="edu-school">{education.school}</div>
-          <div className="edu-meta">
-            <span>{education.emphasis}</span>
-            <span>Minor: {education.minor}</span>
-            <span>{education.honors} · Grad {education.grad}</span>
-            <span className="edu-scholarship">{education.scholarshipNote}</span>
-            <ul className="edu-scholarships">
-              {education.scholarships.map((s) => <li key={s}>{s}</li>)}
-            </ul>
-          </div>
+    <aside className="sidebar">
+      {/* Awards */}
+      <div className="sidebar-section">
+        <div className="section-label">Highlights</div>
+        <div className="sidebar-awards">
+          {topAwards.map((a) => (
+            <div key={a.name} className="sidebar-award">
+              <div className="sidebar-award-name">
+                {a.link
+                  ? <a href={a.link} target="_blank" rel="noreferrer">{a.name} ↗</a>
+                  : a.name}
+                {a.amount && <span className="sidebar-amount">{a.amount}</span>}
+              </div>
+              <div className="sidebar-award-meta">{a.competition} · {a.year}</div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+
+      {/* Education */}
+      <div className="sidebar-section">
+        <div className="section-label">Education</div>
+        <div className="sidebar-edu">
+          <div className="sidebar-edu-degree">{education.degree}</div>
+          <div className="sidebar-edu-school">{education.school}</div>
+          <div className="sidebar-edu-meta">GPA {education.gpa} · {education.honors} · Grad {education.grad}</div>
+          <div className="sidebar-edu-note">{education.scholarshipNote}</div>
+        </div>
+      </div>
+
+      {/* Skills */}
+      <div className="sidebar-section">
+        <div className="section-label">Skills</div>
+        <div className="sidebar-skills">
+          {Object.entries(skills).map(([cat, list]) => (
+            <div key={cat} className="sidebar-skill-group">
+              <div className="sidebar-skill-cat">{cat}</div>
+              <div className="tag-row">
+                {list.map((s) => <span key={s} className="tag">{s}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </aside>
   );
 }
 
 function Experience() {
   return (
-    <section id="experience" className="section">
-      <h2>Experience</h2>
-      <div className="timeline">
+    <section id="experience" className="full-section">
+      <div className="section-label">Experience</div>
+      <div className="exp-grid">
         {experience.map((e) => (
           <div key={e.company} className={`exp-card ${e.highlight ? "highlight" : ""}`}>
             <div className="exp-header">
               <div>
                 <div className="exp-title">{e.title}</div>
                 <div className="exp-company">
-                  {e.link ? (
-                    <a href={e.link} target="_blank" rel="noreferrer">{e.company}</a>
-                  ) : (
-                    e.company
-                  )}
+                  {e.link
+                    ? <a href={e.link} target="_blank" rel="noreferrer">{e.company}</a>
+                    : e.company}
                   {e.location && <span className="exp-location"> · {e.location}</span>}
                 </div>
               </div>
@@ -105,109 +169,10 @@ function Experience() {
   );
 }
 
-function Projects() {
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
-  return (
-    <section id="projects" className="section">
-      <h2>Projects</h2>
-      <div className="project-grid featured">
-        {featured.map((p) => (
-          <div key={p.name} className="project-card featured-card">
-            <div className="project-name">
-              {p.link ? <a href={p.link} target="_blank" rel="noreferrer">{p.name} ↗</a> : p.name}
-            </div>
-            <p className="project-desc">{p.description}</p>
-            <div className="project-footer">
-              <div className="tag-row">{p.skills.map((s) => <span key={s} className="tag">{s}</span>)}</div>
-              <div className="project-links">
-                {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="gh-link">GitHub ↗</a>}
-                {p.appStore && <a href={p.appStore} target="_blank" rel="noreferrer" className="gh-link">App Store ↗</a>}
-                {p.playStore && <a href={p.playStore} target="_blank" rel="noreferrer" className="gh-link">Google Play ↗</a>}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="project-grid small">
-        {rest.map((p) => (
-          <div key={p.name} className="project-card">
-            <div className="project-name">{p.name}</div>
-            <p className="project-desc">{p.description}</p>
-            <div className="project-footer">
-              <div className="tag-row">{p.skills.map((s) => <span key={s} className="tag">{s}</span>)}</div>
-              {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="gh-link">GitHub ↗</a>}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-const SKILL_META = {
-  "Languages":   { icon: "ti-code",   color: "#EAF3DE", iconColor: "#3B6D11" },
-  "AI / ML":     { icon: "ti-brain",  color: "#EEEDFE", iconColor: "#534AB7" },
-  "Full-Stack":  { icon: "ti-stack",  color: "#FAEEDA", iconColor: "#854F0B" },
-  "Tools & Infra": { icon: "ti-server", color: "#FBEAF0", iconColor: "#993556" },
-};
-
-function Skills() {
-  return (
-    <section id="skills" className="section">
-      <h2>Skills</h2>
-      <div className="skills-list">
-        {Object.entries(skills).map(([cat, list]) => {
-          const meta = SKILL_META[cat] || { icon: "ti-circle", color: "#F1EFE8", iconColor: "#5F5E5A" };
-          return (
-            <div key={cat} className="skill-row">
-              <div className="skill-row-head">
-                <div className="skill-icon" style={{ background: meta.color }}>
-                  <i className={`ti ${meta.icon}`} style={{ color: meta.iconColor }} aria-hidden="true" />
-                </div>
-                <span className="skill-cat">{cat}</span>
-              </div>
-              <div className="tag-row">
-                {list.map((s) => <span key={s} className="tag">{s}</span>)}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-function Awards() {
-  return (
-    <section id="awards" className="section">
-      <h2>Awards</h2>
-      <div className="awards-grid">
-        {awards.map((a) => (
-          <div key={a.name} className="award-card">
-            <span className="award-emoji">{a.emoji || "🏆"}</span>
-            <div className="award-body">
-              <div className="award-top">
-                <span className="award-name">
-                  {a.link ? <a href={a.link} target="_blank" rel="noreferrer">{a.name} ↗</a> : a.name}
-                </span>
-                {a.amount && <span className="award-amount">{a.amount}</span>}
-                <span className="award-year">{a.year}</span>
-              </div>
-              {a.competition && <div className="award-comp">{a.competition}</div>}
-              <p className="award-desc">{a.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function Contact() {
   return (
-    <section id="contact" className="section contact-section">
-      <h2>Contact</h2>
+    <section id="contact" className="full-section contact-section">
+      <div className="section-label">Contact</div>
       <p className="contact-sub">Open to full-time roles and collaborations.</p>
       <div className="contact-links">
         <a href={`mailto:${info.email}`} className="btn btn-primary">{info.email}</a>
@@ -222,13 +187,16 @@ export default function App() {
   return (
     <>
       <Nav />
-      <main>
+      <main className="page">
         <Hero />
-        <About />
+        <div className="mag-rule" />
+        <div className="mag-body">
+          <FeaturedProjects />
+          <Sidebar />
+        </div>
+        <div className="mag-rule" />
         <Experience />
-        <Projects />
-        <Skills />
-        <Awards />
+        <div className="mag-rule" />
         <Contact />
       </main>
       <footer className="footer">
