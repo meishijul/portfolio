@@ -41,12 +41,51 @@ function Hero() {
   );
 }
 
+function ConsciousFeature() {
+  return (
+    <div className="conscious-feature">
+      <div className="conscious-header">
+        <div>
+          <div className="conscious-eyebrow">Featured Project · Co-founder &amp; Lead Engineer</div>
+          <h2 className="conscious-title">Conscious</h2>
+          <p className="conscious-tagline">
+            Scan any grocery item and see its real carbon and water cost — plus a lower-impact swap — in seconds.
+          </p>
+          <p className="conscious-story">
+            Standing in the grocery aisle, reading about another wildfire, with no quick way to tell which product does less harm. Greenwashing is everywhere and nobody has time to research each item — so I co-built Conscious with three teammates as a University of Utah senior capstone. We shipped it to the App Store and Google Play. I now run Conscious LLC and am piloting B2B carbon footprint reports.
+          </p>
+          <div className="conscious-stats">
+            <div className="cstat"><span className="cstat-num">277</span><span className="cstat-label">product categories</span></div>
+            <div className="cstat"><span className="cstat-num">173</span><span className="cstat-label">backend tests</span></div>
+            <div className="cstat"><span className="cstat-num">25k</span><span className="cstat-label">lines of code</span></div>
+            <div className="cstat"><span className="cstat-num">5.0★</span><span className="cstat-label">App Store rating</span></div>
+          </div>
+          <div className="tag-row" style={{ marginBottom: "16px" }}>
+            {["Flutter", "FastAPI", "AWS Lambda", "DynamoDB", "OpenAI GPT-4o", "Agribalyse LCA", "Open Food Facts"].map(s => <span key={s} className="tag">{s}</span>)}
+          </div>
+          <div className="conscious-links">
+            <a href="https://apps.apple.com/us/app/consciouss/id6759814422" target="_blank" rel="noreferrer" className="btn btn-primary">App Store ↗</a>
+            <a href="https://play.google.com/store/apps/details?id=com.conscious.app" target="_blank" rel="noreferrer" className="btn btn-outline">Google Play ↗</a>
+          </div>
+        </div>
+      </div>
+      <div className="conscious-screens">
+        <img src="/conscious-d.jpg" alt="Scan a grocery item" className="cscreen" />
+        <img src="/conscious-c.jpg" alt="See its carbon footprint" className="cscreen" />
+        <img src="/conscious-a.jpg" alt="Compare lower-carbon options" className="cscreen" />
+        <img src="/conscious-b.jpg" alt="See how it's calculated" className="cscreen" />
+      </div>
+    </div>
+  );
+}
+
 function FeaturedProjects() {
-  const featured = projects.filter((p) => p.featured);
+  const featured = projects.filter((p) => p.featured && p.name !== "Conscious App");
   return (
     <section id="projects" className="main-section">
       <div className="section-label">Featured Work</div>
-      <div className="featured-list">
+      <ConsciousFeature />
+      <div className="featured-list" style={{ marginTop: "8px" }}>
         {featured.map((p) => (
           <div key={p.name} className="feat-card">
             <div className="feat-card-top">
