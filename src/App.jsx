@@ -7,6 +7,7 @@ function Nav() {
     <nav className="nav">
       <span className="nav-name">{info.name}</span>
       <ul>
+        <li><Link to="/conscious">Conscious ↗</Link></li>
         <li><a href={`mailto:${info.email}`}>Email</a></li>
         <li><a href={info.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
         <li><a href={info.github} target="_blank" rel="noreferrer">GitHub</a></li>
