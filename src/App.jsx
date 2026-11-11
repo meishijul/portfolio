@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { info, education, experience, projects, skills, awards } from "./data";
 import "./App.css";
 
@@ -65,7 +66,8 @@ function ConsciousFeature() {
             {["Flutter", "FastAPI", "AWS Lambda", "DynamoDB", "OpenAI GPT-4o", "Agribalyse LCA", "Open Food Facts"].map(s => <span key={s} className="tag">{s}</span>)}
           </div>
           <div className="conscious-links">
-            <a href="https://apps.apple.com/us/app/consciouss/id6759814422" target="_blank" rel="noreferrer" className="btn btn-primary">App Store ↗</a>
+            <Link to="/conscious" className="btn btn-primary">Read Case Study →</Link>
+            <a href="https://apps.apple.com/us/app/consciouss/id6759814422" target="_blank" rel="noreferrer" className="btn btn-outline">App Store ↗</a>
             <a href="https://play.google.com/store/apps/details?id=com.conscious.app" target="_blank" rel="noreferrer" className="btn btn-outline">Google Play ↗</a>
           </div>
         </div>

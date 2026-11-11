@@ -1,0 +1,39 @@
+.cs-page { max-width: 1100px; margin: 0 auto; padding: 0 60px 80px; }
+
+.cs-header { padding: 56px 0 40px; border-bottom: 0.5px solid var(--border); margin-bottom: 40px; }
+.cs-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.cs-title { font-family: "Playfair Display", Georgia, serif; font-size: clamp(48px, 7vw, 80px); font-weight: 700; line-height: 1; margin-bottom: 16px; }
+.cs-subtitle { font-size: 20px; color: var(--muted); line-height: 1.6; max-width: 640px; margin-bottom: 24px; }
+.cs-store-links { display: flex; gap: 12px; }
+
+.cs-hero-screens { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 56px; }
+.cs-screen { width: 100%; border-radius: 14px; display: block; }
+
+.cs-body { display: grid; grid-template-columns: 1fr 280px; gap: 60px; align-items: flex-start; }
+
+.cs-section { margin-bottom: 44px; }
+.cs-h2 { font-size: 22px; font-weight: 700; margin-bottom: 14px; }
+.cs-section p { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+.cs-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.cs-list li { font-size: 17px; color: var(--muted); line-height: 1.7; padding-left: 20px; position: relative; }
+.cs-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+
+.cs-inline-screen { margin: 24px 0; }
+.cs-inline-screen img { width: 220px; border-radius: 14px; display: block; }
+.cs-caption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+.cs-sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 28px; }
+.cs-meta-block {}
+.cs-meta-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.cs-meta-val { font-size: 14px; line-height: 1.5; }
+.cs-stats { display: flex; flex-direction: column; gap: 12px; }
+.cs-stat { display: flex; flex-direction: column; }
+.cs-stat-n { font-size: 24px; font-weight: 700; color: var(--text); line-height: 1; }
+.cs-stat-l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+@media (max-width: 860px) {
+  .cs-page { padding: 0 20px 60px; }
+  .cs-hero-screens { grid-template-columns: 1fr 1fr; }
+  .cs-body { grid-template-columns: 1fr; }
+  .cs-sidebar { position: static; }
+}
