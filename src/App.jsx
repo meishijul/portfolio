@@ -24,6 +24,7 @@ function Hero() {
         <div className="hero-text">
           <h1 className="hero-name">Ishita<br /><span>Juluru.</span></h1>
           <p className="hero-bio">{info.about}</p>
+          <p className="hero-interests">{info.interests}</p>
         </div>
       </div>
       <div className="hero-pills">

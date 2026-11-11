@@ -68,6 +68,7 @@ ul { list-style: none; }
 }
 .hero-name span { color: var(--accent); }
 .hero-bio { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 560px; }
+.hero-interests { font-size: 14px; color: var(--accent2); line-height: 1.6; max-width: 560px; font-weight: 500; }
 .hero-pills {
   display: flex;
   flex-direction: column;
