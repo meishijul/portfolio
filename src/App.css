@@ -230,6 +230,14 @@ ul { list-style: none; }
 .sidebar-skills { display: flex; flex-direction: column; gap: 18px; }
 .sidebar-skill-cat { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
 
+/* ── Skills full-width ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 32px;
+}
+.skills-col-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+
 /* ── Full-width sections ── */
 .full-section { padding: 44px 0; }
 
@@ -280,4 +288,5 @@ ul { list-style: none; }
   .sidebar { padding: 32px 0; }
   .more-projects { grid-template-columns: 1fr; }
   .exp-header { flex-direction: column; gap: 4px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
 }

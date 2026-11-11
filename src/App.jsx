@@ -158,20 +158,6 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* Skills */}
-      <div className="sidebar-section">
-        <div className="section-label">Skills</div>
-        <div className="sidebar-skills">
-          {Object.entries(skills).map(([cat, list]) => (
-            <div key={cat} className="sidebar-skill-group">
-              <div className="sidebar-skill-cat">{cat}</div>
-              <div className="tag-row">
-                {list.map((s) => <span key={s} className="tag">{s}</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </aside>
   );
 }
@@ -208,6 +194,24 @@ function Experience() {
   );
 }
 
+function Skills() {
+  return (
+    <section className="full-section">
+      <div className="section-label">Skills</div>
+      <div className="skills-grid">
+        {Object.entries(skills).map(([cat, list]) => (
+          <div key={cat} className="skills-col">
+            <div className="skills-col-title">{cat}</div>
+            <div className="tag-row">
+              {list.map((s) => <span key={s} className="tag">{s}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="full-section contact-section">
@@ -235,6 +239,8 @@ export default function App() {
         </div>
         <div className="mag-rule" />
         <Experience />
+        <div className="mag-rule" />
+        <Skills />
         <div className="mag-rule" />
         <Contact />
       </main>
