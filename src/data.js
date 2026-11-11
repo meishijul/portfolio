@@ -7,7 +7,7 @@ export const info = {
   linkedin: "https://www.linkedin.com/in/ishita-juluru",
   github: "https://github.com/meishijul",
   about:
-    "First-generation immigrant and Honors CS grad from the University of Utah (3.66 GPA, Dean's List 2022–2025) with an emphasis in AI, information, and visual computing. 1 of 50 students in the College of Engineering to graduate from the Honors College and 1 of 11 to earn the Undergraduate Research Scholar Designation. I co-founded Conscious LLC — a sustainability startup on the App Store and Google Play that won the $20k Wilkes Center Student Innovation Prize — and have shipped production software at CHG Healthcare, in research labs, and now at WebBank.",
+    "I'm a 21-year-old CS grad who gets way too excited about carbon footprints and also works in fintech. I co-founded Conscious — a sustainability app on the App Store and Google Play — and I ship production software at WebBank. First-gen immigrant, Honors grad, Dean's List. Currently figuring out how to make both the planet and software a little better.",
 };
 
 export const education = {
